@@ -36,39 +36,37 @@ function submitButtonClickHandler() {
     if ((initialPrice.value !== "") && (stockQuantity.value !== "") && (currentPrice.value !== "")) {
 
         console.log("fields are not empty");
-        if ((initialPriceInput >= 0) && (stockQuantityInput >= 0) && (currentPriceInput >= 0)) {
+        if ((initialPriceInput > 0) && (stockQuantityInput > 0) && (currentPriceInput > 0)) {
             console.log("value is greater than or equal to zero");
             calculateProfitLoss(initialPriceInput, stockQuantityInput, currentPriceInput);
+        } else if ((initialPriceInput === 0) || (stockQuantityInput === 0) || (currentPriceInput === 0)) {
+            alert("Please enter Values greater than zero.😊")
         } else {
             console.log("Negative no");
         }
     } else {
+        alert("Please enter all the three values.😊");
         console.log("please enter in all fields");
     }
 }
 
 function showProfit(profit, profitPercentage) {
-
-
-    outputText.style.display = "block";
-    outputText.style.color = "#f1f2f3";
-    outputText.style.border = "2px solid rgb(0 149 0)";
-    outputText.style.backgroundColor = "rgb(0 149 0)";
-    outputText.innerHTML = `<span>😄</span> The profit is Rs. ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)} %. <span>😄</span>`;
+    outputText.style.fontSize = "xx-Large"
+    outputText.style.backgroundColor = "green";
+    outputText.innerHTML = `Yayy!!
+    The profit is Rs. ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)} %. <span>😄</span>`;
 }
 
 function showLoss(loss, lossPercentage) {
-
-
-    outputText.style.display = "block";
-    outputText.style.color = "#f1f2f3";
-    outputText.style.border = "2px solid red";
+    outputText.style.fontSize = "xx-Large"
     outputText.style.backgroundColor = "red";
-
-    if (lossPercentage > 50) {
-        outputText.innerHTML = `The loss is Rs. ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)} %.`;
+    if (lossPercentage < 50) {
+        outputText.innerHTML = `The loss is Rs. ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)} %.😨`;
     } else {
-        outputText.innerHTML = `More than 50 percent loss. The loss is Rs. ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)} %.`;
+        document.body.style.background = "grey";
+        outputText.innerHTML = `More than 50 percent loss!!!
+
+        The loss is Rs. ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)} %.😩`;
     }
 }
 
