@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit-Loss</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="calculator">
+
+        <h1>Calculate Profit or Loss</h1>
+        <section class="user-input">
+            <div>
+                <label for="initial-price">Initial Price
+                    <input type="number" id="initial-price" placeholder="Please Enter Initial Price here"></label>
+            </div>
+            <div>
+                <label for="stock-quantity">Quantity
+                    <input type="number" id="stock-quantity" placeholder="Please Enter Number of stocks here"></label>
+            </div>
+            <div>
+                <label for="current-price">Current Price
+                    <input type="number" id="current-price" placeholder="Please Enter current price here"></label>
+            </div>
+        </section>
+        <section>
+            <button id="submit-button">Calculate</button>
+            <button id="clear-button">Clear</button>
+        </section>
+    </div>
+    <div id="output"></div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+
+</html>
