@@ -13,14 +13,11 @@ clearBtn.addEventListener("click", function () {
     currentPrice.value = "";
     outputText.innerHTML = "";
     outputText.style = "";
+    document.body.style.background = "none";
 })
 
 
 function submitButtonClickHandler() {
-    console.log("initialPrice", initialPrice);
-    console.log("stockQuantity", stockQuantity);
-    console.log("currentPrice", currentPrice);
-
     let initialPriceInput = Number(initialPrice.value);
     let stockQuantityInput = Number(stockQuantity.value);
     let currentPriceInput = Number(currentPrice.value);
@@ -37,16 +34,14 @@ function submitButtonClickHandler() {
 
         console.log("fields are not empty");
         if ((initialPriceInput > 0) && (stockQuantityInput > 0) && (currentPriceInput > 0)) {
-            console.log("value is greater than or equal to zero");
             calculateProfitLoss(initialPriceInput, stockQuantityInput, currentPriceInput);
         } else if ((initialPriceInput === 0) || (stockQuantityInput === 0) || (currentPriceInput === 0)) {
             alert("Please enter Values greater than zero.😊")
         } else {
-            console.log("Negative no");
+            alert("You have entered a negative number. Please enter Values greater than zero.😊")
         }
     } else {
         alert("Please enter all the three values.😊");
-        console.log("please enter in all fields");
     }
 }
 
@@ -76,21 +71,16 @@ function calculateProfitLoss(initialPriceInput, stockQuantityInput, currentPrice
 
         let profit = (currentPriceInput - initialPriceInput) * stockQuantityInput;
         let profitPercentage = ((currentPriceInput - initialPriceInput) / initialPriceInput) * 100;
-        console.log("Profit:", profit, "and Profit Percentage:", profitPercentage);
         showProfit(profit, profitPercentage)
 
     } else if (currentPriceInput < initialPriceInput) {
 
-        // loss logic
         let loss = (initialPriceInput - currentPriceInput) * stockQuantityInput;
         let lossPercentage = ((initialPriceInput - currentPriceInput) / initialPriceInput) * 100;
-        console.log("Loss:", loss, "and Loss Percentage:", lossPercentage);
-        showLoss(loss, lossPercentage)
-
+        showLoss(loss, lossPercentage);
 
     } else if (currentPriceInput === initialPriceInput) {
-
-        console.log("No profit or loss. The current price is the same as when you bought it.");
+        outputText.innerHTML = `No Profit , No Loss 😃!!!`
 
     }
 }
