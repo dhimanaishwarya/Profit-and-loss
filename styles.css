@@ -56,18 +56,20 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 50%;
+  padding: 3px;
+  /* width: 50%; */
 }
 
 footer p {
   font-size: medium;
   text-align: center;
-  padding: 0.1rem;
+  /* padding: 0.1rem; */
 }
 
 a,
 img,
-li {
+li,
+ul {
   display: inline;
 }
 
