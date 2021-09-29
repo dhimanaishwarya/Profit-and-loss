@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 
 :root {
-  --primary-color: #064e3b;
+  --primary-color: #fbbf24;
   --secondary-color: #e5e7eb;
 }
 
@@ -29,6 +29,7 @@ label {
   margin: 2rem;
   display: block;
   font-size: x-large;
+  color: rgba(0, 0, 0, 0.808);
 }
 
 button {
@@ -42,29 +43,35 @@ button {
   border-radius: 4px;
 }
 
-footer {
-  text-align: right;
-  background-color: var(--secondary-color);
-  border-radius: 1rem;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  display: block;
-  height: 10%;
-}
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  display: block;
-}
-
-img {
-  width: 20px;
-}
-
 .output {
   font-size: x-large;
   font-weight: 600;
   margin: 2rem 0;
+}
+
+footer {
+  background-color: var(--primary-color);
+  text-align: center;
+  right: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+footer p {
+  font-size: medium;
+  text-align: center;
+  padding: 0.1rem;
+}
+
+a,
+img,
+li {
+  display: inline;
+}
+
+img {
+  width: 40px;
+  padding: 0.2rem;
 }
