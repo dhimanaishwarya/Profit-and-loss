@@ -46,15 +46,13 @@ function submitButtonClickHandler() {
 }
 
 function showProfit(profit, profitPercentage) {
-    outputText.style.fontSize = "xx-Large"
-    outputText.style.backgroundColor = "green";
+    outputText.style.fontSize = "x-Large"
     outputText.innerHTML = `Yayy!!
     The profit is Rs. ${profit.toFixed(2)} and the profit percentage is ${profitPercentage.toFixed(2)} %. <span>😄</span>`;
 }
 
 function showLoss(loss, lossPercentage) {
-    outputText.style.fontSize = "xx-Large"
-    outputText.style.backgroundColor = "red";
+    outputText.style.fontSize = "x-Large"
     if (lossPercentage < 50) {
         outputText.innerHTML = `The loss is Rs. ${loss.toFixed(2)} and the loss percentage is ${lossPercentage.toFixed(2)} %.😨`;
     } else {
